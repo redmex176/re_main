@@ -66,26 +66,14 @@
 // writeYourGenres();
 
 
-let obj = {
-    a: 5,
-    b: 1,
-    c: 12,
-    d: 3,
-    f: {
-        a: 3,
-        c: 5
+console.dir([1,2,3]);
+let solder = {
+    health: 200,
+    armor: 100,
+    say: function () {
+        console.log("Hello");   
     }
 };
-
-function copy(mainObj) {
-    let key;
-    let newObj = {};
-    for (key in mainObj) {
-         newObj[key] = mainObj[key];
-    }
-    return newObj;
-}
-
-let copyObj = copy(obj);
-
-console.log(copyObj);
+let user = Object.create(solder);
+Object.setPrototypeOf(user, solder);
+user.say();
